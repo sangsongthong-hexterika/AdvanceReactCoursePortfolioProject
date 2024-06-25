@@ -44,6 +44,8 @@ const Header = () => {
     }
   };
 
+  useEffect(() => {}, []);
+
   return (
     <Box
       position="fixed"
@@ -65,11 +67,19 @@ const Header = () => {
         >
           <nav>
             {/* Add social media links based on the `socials` data */}
-            <HStack></HStack>
+            <HStack>
+              {socials.map((social) => (
+                <a key={social.url} href={social.url} target="_blank" rel="noopener noreferrer">
+                  <FontAwesomeIcon icon={social.icon} size="2x" />
+                </a>
+              ))}
+            </HStack>
           </nav>
           <nav>
             <HStack spacing={8}>
               {/* Add links to Projects and Contact me section */}
+              <a href="/#contactme" id="contactme-section" onClick={handleClick('contactme')}>Contact Me</a>
+              <a href="/#projects" id="projects-section" onClick={handleClick('projects')}>Projects</a>
             </HStack>
           </nav>
         </HStack>
