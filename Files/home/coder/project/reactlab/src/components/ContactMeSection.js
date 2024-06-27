@@ -28,7 +28,9 @@ const LandingSection = () => {
       type: "",
       comment: "",
     },
-    onSubmit: async (values, {setSubmitting, resetForm}) => {},
+    onSubmit: async (e, values, {setSubmitting, resetForm}) => {
+      e.preventDefault()
+    },
     validationSchema: Yup.object({
       firstName: Yup.string()
       .required("Required"),
