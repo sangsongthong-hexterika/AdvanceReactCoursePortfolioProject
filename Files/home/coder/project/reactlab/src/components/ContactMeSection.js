@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import { useFormik, validateYupSchema } from "formik";
+import { useFormik } from "formik";
 import {
   Box,
   Button,
@@ -28,9 +28,24 @@ const LandingSection = () => {
       type: "",
       comment: "",
     },
-    onSubmit: async (e, values, {setSubmitting, resetForm}) => {
-      e.preventDefault()
+
+    onSubmit: async (values, {setSubmitting, resetForm}) => {
+      setSubmitting(true);
+      try {
+        await submit(values);
+        if (response?.type === "success") {
+          onOpen("success");
+          resetForm();
+        } else {
+          onOpen("error", response?.message || "Unexpected response format.");
+        }
+      } catch (error) {
+        onOpen("error", error.message);
+      } finally {
+        setSubmitting(false); // Set submitting state back to false
+      }
     },
+
     validationSchema: Yup.object({
       firstName: Yup.string()
       .required("Required"),
@@ -46,40 +61,49 @@ const LandingSection = () => {
     }),
   });
 
+  useEffect(() => {
+    if (response) {
+      console.log("Response updated:", response);
+    }
+  }, [response]);
+
   return (
     <FullScreenSection
       isDarkBackground
       backgroundColor="#512DA8"
       py={16}
       spacing={8}
+      id="contactme"
     >
       <VStack w="1024px" p={32} alignItems="flex-start">
         <Heading as="h1" id="contactme-section">
           Contact me
         </Heading>
         <Box p={6} rounded="md" w="100%">
-          <form>
+          <form onSubmit={formik.handleSubmit}>
             <VStack spacing={4}>
-              <FormControl isInvalid={false}>
+              <FormControl isInvalid={formik.touched.firstName && formik.errors.firstName}>
                 <FormLabel htmlFor="firstName">Name</FormLabel>
                 <Input
                   id="firstName"
                   name="firstName"
+                  {...formik.getFieldProps('firstName')}
                 />
-                <FormErrorMessage></FormErrorMessage>
+                <FormErrorMessage>{formik.errors.firstName}</FormErrorMessage>
               </FormControl>
-              <FormControl isInvalid={false}>
+              <FormControl isInvalid={formik.touched.email && formik.errors.email}>
                 <FormLabel htmlFor="email">Email Address</FormLabel>
                 <Input
                   id="email"
                   name="email"
                   type="email"
+                  {...formik.getFieldProps('email')}
                 />
-                <FormErrorMessage></FormErrorMessage>
+                <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
               </FormControl>
               <FormControl>
                 <FormLabel htmlFor="type">Type of enquiry</FormLabel>
-                <Select id="type" name="type">
+                <Select id="type" name="type" {...formik.getFieldProps('type')}>
                   <option value="hireMe">Freelance project proposal</option>
                   <option value="openSource">
                     Open source consultancy session
@@ -87,16 +111,22 @@ const LandingSection = () => {
                   <option value="other">Other</option>
                 </Select>
               </FormControl>
-              <FormControl isInvalid={false}>
+              <FormControl isInvalid={formik.touched.comment && formik.errors.comment}>
                 <FormLabel htmlFor="comment">Your message</FormLabel>
                 <Textarea
                   id="comment"
                   name="comment"
                   height={250}
+                  {...formik.getFieldProps('comment')}
                 />
-                <FormErrorMessage></FormErrorMessage>
+                <FormErrorMessage>{formik.errors.comment}</FormErrorMessage>
               </FormControl>
-              <Button type="submit" colorScheme="purple" width="full">
+              <Button 
+                type="submit" 
+                colorScheme="purple" 
+                width="full" 
+                isLoading={isLoading || formik.isSubmitting}
+              >
                 Submit
               </Button>
             </VStack>

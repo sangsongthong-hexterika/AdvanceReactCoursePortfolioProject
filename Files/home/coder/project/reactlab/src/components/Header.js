@@ -37,10 +37,12 @@ const Header = () => {
     const id = `${anchor}-section`;
     const element = document.getElementById(id);
     if (element) {
+      window.history.pushState(null, null, `/#${id}`);
       element.scrollIntoView({
         behavior: "smooth",
         block: "start",
       });
+      // window.history.pushState(null, null, `/#${anchor}-section`);
     }
   };
 

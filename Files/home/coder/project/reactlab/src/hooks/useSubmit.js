@@ -10,7 +10,7 @@ const useSubmit = () => {
   const [isLoading, setLoading] = useState(false);
   const [response, setResponse] = useState(null);
 
-  const submit = async (url, data) => {
+  const submit = async (data) => { // Remove url for not being used
     const random = Math.random();
     setLoading(true);
     try {
@@ -21,12 +21,12 @@ const useSubmit = () => {
       setResponse({
         type: 'success',
         message: `Thanks for your submission ${data.firstName}, we will get back to you shortly!`,
-      })
+      });
     } catch (error) {
       setResponse({
         type: 'error',
         message: 'Something went wrong, please try again later!',
-      })
+      });
     } finally {
       setLoading(false);
     }
