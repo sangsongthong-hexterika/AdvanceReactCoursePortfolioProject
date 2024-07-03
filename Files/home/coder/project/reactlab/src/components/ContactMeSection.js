@@ -25,10 +25,19 @@ const LandingSection = () => {
     initialValues: {
       firstName: "", 
       email: "",
-      type: "",
+      type: "", // The solution code written: type: "hireMe". It isn't that significant - I think. I want to be safe so I noted it down.
       comment: "",
     },
-
+    
+    /* 
+    The solution code written:
+    
+    onSubmit: (values) => { 
+      submit('https://john.com/contactme', values);
+      
+    This is a much simpler approach than what I did. I will come back 
+    to try to understand it later.
+    */
     onSubmit: async (values, {setSubmitting, resetForm}) => {
       setSubmitting(true);
       try {
@@ -66,14 +75,28 @@ const LandingSection = () => {
       console.log("Response updated:", response);
     }
   }, [response]);
+  
+  /* 
+  The solution code written: 
 
+  useEffect(() => { 
+    if (response) { 
+      onOpen(response.type, response.message); 
+      if (response.type === 'success') { 
+        formik.resetForm(); 
+      } 
+    } 
+  }, [response]);
+  
+  I will come back to understand this later. 
+  */
   return (
     <FullScreenSection
       isDarkBackground
       backgroundColor="#512DA8"
       py={16}
       spacing={8}
-      id="contactme"
+      id="contactme" // The solution code didn't have this line and it still works.
     >
       <VStack w="1024px" p={32} alignItems="flex-start">
         <Heading as="h1" id="contactme-section">
@@ -125,7 +148,10 @@ const LandingSection = () => {
                 type="submit" 
                 colorScheme="purple" 
                 width="full" 
-                isLoading={isLoading || formik.isSubmitting}
+                isLoading={isLoading || formik.isSubmitting} 
+                // The solution code written: isLoading={isLoading}.
+                // I tried that but still ran into problems so I had to change my
+                // approach.
               >
                 Submit
               </Button>

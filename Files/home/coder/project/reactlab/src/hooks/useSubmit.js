@@ -10,7 +10,7 @@ const useSubmit = () => {
   const [isLoading, setLoading] = useState(false);
   const [response, setResponse] = useState(null);
 
-  const submit = async (data) => { // Remove url for not being used
+  const submit = async (data) => { // Remove url from (url, data) for not being used
     const random = Math.random();
     setLoading(true);
     try {

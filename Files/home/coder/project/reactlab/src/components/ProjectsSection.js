@@ -38,7 +38,11 @@ const ProjectsSection = () => {
       p={8}
       alignItems="flex-start"
       spacing={8}
-      id="projects"
+      id="projects" // The solution code didn't have this line and it still works.
+      // I believe it works because I had stumbled too long trying to 
+      // add id="projects-section" instead of id="projects". 
+      // However, I don't want to just make change of this line to be like the
+      // solution code and risk breaking my code that is already worked.
     >
       <Heading as="h1" id="projects-section">
         Featured Projects
