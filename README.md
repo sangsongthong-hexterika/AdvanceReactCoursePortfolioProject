@@ -4,7 +4,7 @@ This project showcases my learning progress in React through the Advanced React 
 
 ## Project Intentions
 
-I intend to use this project to demonstrate my proficiency in React and Git as part of my learning journey. While I may not actively continue development beyond the course requirements, I aim to submit it as a portfolio piece showcasing my skills.
+This is my portfolio profile now.
 
 ## Disclaimer
 
