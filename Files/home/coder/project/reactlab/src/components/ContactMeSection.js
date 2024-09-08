@@ -23,19 +23,19 @@ const LandingSection = () => {
 
   const formik = useFormik({
     initialValues: {
-      firstName: "", 
+      firstName: "",
       email: "",
       type: "", // The solution code written: type: "hireMe". It isn't that significant - I think. I want to be safe so I noted it down.
       comment: "",
     },
-    
-    /* 
+
+    /*
     The solution code written:
-    
-    onSubmit: (values) => { 
+
+    onSubmit: (values) => {
       submit('https://john.com/contactme', values);
-      
-    This is a much simpler approach than what I did. I will come back 
+
+    This is a much simpler approach than what I did. I will come back
     to try to understand it later.
     */
     onSubmit: async (values, {setSubmitting, resetForm}) => {
@@ -75,8 +75,8 @@ const LandingSection = () => {
       console.log("Response updated:", response);
     }
   }, [response]);
-  
-  /* 
+
+  /*
   The solution code written: 
 
   useEffect(() => { 
@@ -145,10 +145,10 @@ const LandingSection = () => {
                 <FormErrorMessage>{formik.errors.comment}</FormErrorMessage>
               </FormControl>
               <Button 
-                type="submit" 
-                colorScheme="purple" 
-                width="full" 
-                isLoading={isLoading || formik.isSubmitting} 
+                type="submit"
+                colorScheme="purple"
+                width="full"
+                isLoading={isLoading || formik.isSubmitting}
                 // The solution code written: isLoading={isLoading}.
                 // I tried that but still ran into problems so I had to change my
                 // approach.

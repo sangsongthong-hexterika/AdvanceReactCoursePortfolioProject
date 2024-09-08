@@ -4,27 +4,27 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import {
   faGithub,
   faLinkedin,
-  faMedium,
   faStackOverflow,
 } from "@fortawesome/free-brands-svg-icons";
 import { Box, HStack } from "@chakra-ui/react";
+import TryHackMeLogo from "../images/tryhackme-logo.png";
 
 const socials = [
   {
     icon: faEnvelope,
-    url: "mailto: hello@example.com",
+    url: "mailto: gexterlife.personal@gmail.com",
   },
   {
     icon: faGithub,
-    url: "https://github.com",
+    url: "https://github.com/sangsongthong-hexterika",
   },
   {
     icon: faLinkedin,
-    url: "https://www.linkedin.com",
+    url: "https://www.linkedin.com/in/sangsongthong-chantaranothai-0531ab179/",
   },
   {
-    icon: faMedium,
-    url: "https://medium.com",
+    icon: TryHackMeLogo,
+    url: "https://tryhackme.com/p/gexter5thm",
   },
   {
     icon: faStackOverflow,
@@ -93,8 +93,11 @@ I will come back to this later.
                   href={social.url} 
                   target="_blank" 
                   rel="noopener noreferrer">
-                  <FontAwesomeIcon icon={social.icon} size="2x" 
-                />
+                  {typeof social.icon === 'string' ? (
+                    <img src={social.icon} alt="icon" style={{ width: '24px', height: '24px' }} />
+                  ) : (
+                    <FontAwesomeIcon icon={social.icon} size="2x" />
+                  )}
                 </a>
                 /* The solution code wriiten: 
               {socials.map(({ icon, url }) => ( 
