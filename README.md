@@ -4,7 +4,18 @@ This project showcases my learning progress in React through the Advanced React 
 
 ## Project Intentions
 
-This is my portfolio profile now.
+This is my portfolio profile now. 
+
+Originally, I intended to just submit this project to Coursera's
+Advance React Course only and be done with it. Now, things change. I decide to come back to work on it
+and use it to reflect my own portfolio. This is the reason why there are some unrelated information
+left on the project that are not my own things. 
+
+I intend to gradually make changes to the information that is
+displayed there from totally not related to me to be more and more personalized. 
+
+I intend to finish cleaning up and taking the non-related information out of this project 
+within two weeks from now. 
 
 ## Disclaimer
 
