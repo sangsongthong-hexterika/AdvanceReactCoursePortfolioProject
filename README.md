@@ -4,17 +4,13 @@ This project showcases my learning progress in React through the Advanced React 
 
 ## Project Intentions
 
-This is now my personal portfolio project.
+This project is currently being transitioned from a submission for Coursera's Advanced React Course to a personal portfolio profile. Initially designed to meet course requirements, it may contain placeholders or generic content.
 
-Originally, I created this project as part of Coursera's Advanced React Course with the sole intention of submitting it for course completion. However, things have changed. I have decided to revisit this project, further develop it, and use it as a reflection of my own portfolio.
-
-As a result, there may be remnants of unrelated setup files from the Coursera project, but I am gradually updating the information and structure to make it more personalized and reflective of my work.
-
-I aim to complete the process of removing non-related content from the project within the next two weeks.
+I have decided to dedicate time over the next two weeks to transform this project into a fully personalized portfolio. This involves replacing any non-related details and placeholders with content that showcases my skills and work. The updates will be evident in the app's user interface, specifically in what is displayed after running `npm start`.
 
 ## Disclaimer
 
-The project includes original code from the Advanced React Course on Coursera, which may include outdated software versions due to the course’s timeline. The project may also contain the setup files within the Coursera lab setup. While I don't usually include these specific local setup files in the project repository, I have kept them to ensure I have all necessary setup files when submitting the course project to the learning platform.
+The project originally included code from Coursera’s Advanced React Course, which may have outdated software versions. While these elements were necessary for course submission, I am now refining and updating the project to enhance its representation of my personal work.
 
 ## License
 
