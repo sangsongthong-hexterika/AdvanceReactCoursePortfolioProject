@@ -5,28 +5,46 @@ import Card from "./Card";
 
 const projects = [
   {
-    title: "React Space",
+    title: "Version Control",
     description:
-      "Handy tool belt to create amazing AR components in a React app, with redux integration via middleware️",
-    getImageSrc: () => require("../images/photo1.jpg"),
+      "Learned how to use git and Github",
+    getImageSrc: () => require("../images/VersionControl.png"),
   },
   {
-    title: "React Infinite Scroll",
+    title: "React Basics Course",
     description:
-      "A scrollable bottom sheet with virtualisation support, native animations at 60 FPS and fully implemented in JS land 🔥️",
-    getImageSrc: () => require("../images/photo2.jpg"),
+      "Learned basics React concepts",
+    getImageSrc: () => require("../images/ReactBasics.png"),
   },
   {
-    title: "Photo Gallery",
+    title: "Advanced React",
     description:
-      "A One-stop shop for photographers to share and monetize their photos, allowing them to have a second source of income",
-    getImageSrc: () => require("../images/photo3.jpg"),
+      "Learned more advanced concepts of React",
+    getImageSrc: () => require("../images/AdvancedReact.png"),
   },
   {
-    title: "Event planner",
+    title: "HTML And CSS In Depth",
     description:
-      "A mobile application for leisure seekers to discover unique events and activities in their city with a few taps",
-    getImageSrc: () => require("../images/photo4.jpg"),
+      "Learned HTML and CSS",
+    getImageSrc: () => require("../images/HTML-and-CSS-In-Depth.png"),
+  },
+  {
+    title: "Programming With JavaScript",
+    description:
+      "Learned JavaScript",
+    getImageSrc: () => require("../images/ProgrammingWithJavaScript.png"),
+  },
+  {
+    title: "Principles of UX/UI Design",
+    description:
+      "Learned principles of UX/UI design using Figma",
+    getImageSrc: () => require("../images/PrinciplesOf-UI-UX-Design.png"),
+  },
+  {
+    title: "Bachelor's Degree Completion: Sport Science",
+    description:
+      "This is my Bachelor's Degree.",
+    getImageSrc: () => require("../images/SUT-ProofOfCompletingADegree.png"),
   },
 ];
 
@@ -45,7 +63,7 @@ const ProjectsSection = () => {
       // solution code and risk breaking my code that is already worked.
     >
       <Heading as="h1" id="projects-section">
-        Featured Projects
+        My Educations:
       </Heading>
       <Box
         display="grid"
