@@ -46,6 +46,10 @@ const projects = [
       "This is my Bachelor's Degree.",
     getImageSrc: () => require("../images/SUT-ProofOfCompletingADegree.png"),
   },
+  {
+    title: "Certified in Cybersecurity (CC) by exam by ISC2 in an attempt to get into cybersecurity.",
+    getImageSrc: () => require("../images/certified-in-cybersecurity-cc.png"),
+  },
 ];
 
 const ProjectsSection = () => {
